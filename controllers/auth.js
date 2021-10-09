@@ -1,4 +1,4 @@
-1const axios = require('axios')
+const axios = require('axios')
 const mysql = require('mysql')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
@@ -42,7 +42,9 @@ const login = (req, res) => {
       client_id: process.env.AUTH0_CLIENT_ID,
       client_secret: process.env.AUTH0_CLIENT_SECRET
     }
+    
   })
+  
   .then(response => {
     const { access_token } = response.data
     res.json({
